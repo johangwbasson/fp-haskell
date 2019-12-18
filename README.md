@@ -1,2 +1,5 @@
 # fp-haskell
-Basic rest api using haskell
+
+Functional Programming in Haskell
+
+Warning: Contains compiler errors

@@ -22,4 +22,11 @@ executable fp-haskell
                      , http-types
                      , text
                      , aeson
-  other-modules:       Domain
+                     , bytestring
+                     , cryptonite
+                     , jwt
+  other-modules:       User
+                     , Token
+                     , AuthenticationRequest
+                     , Security
+                     , Db

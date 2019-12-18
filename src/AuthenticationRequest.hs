@@ -1,13 +1,16 @@
 {-# LANGUAGE OverloadedStrings #-}
-module Domain where
+{-# LANGUAGE DuplicateRecordFields #-}
+
+module AuthenticationRequest where
+
 import Data.Text.Lazy
 import Data.Text.Lazy.Encoding
 import Data.Aeson
 import Control.Applicative
 
 data AuthenticateRequest = AuthenticateRequest
-    { email :: Text 
-    , password :: Text  
+    { email :: String
+    , password :: String  
     } deriving (Show)
 
 instance FromJSON AuthenticateRequest where 
@@ -18,12 +21,4 @@ instance FromJSON AuthenticateRequest where
 instance ToJSON AuthenticateRequest where
     toJSON (AuthenticateRequest email password) =
         object ["email" .= email,
-                "password" .= password]                             
-
-data Token = Token  {
-    token :: Text
-} deriving (Show)
-
-instance ToJSON Token where
-        toJSON (Token token) = 
-            object ["token" .= token]
+                "password" .= password] 
